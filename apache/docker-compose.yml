@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:2022.6.3
+    command: tunnel run
+    env_file:
+      - .env
+  
+
+  apache:
+    image: httpd:2.4-alpine
+    volumes:
+      - ./index.html:/usr/local/apache2/htdocs/index.html:ro

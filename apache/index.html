@@ -1,0 +1,18 @@
+<h1>Cloudflared and HTTPD</h1>
+
+<a href="https://community.cloudflare.com/t/how-to-block-all-connections-other-than-cloudflare-on-port-80-through-tunnel/392533/24?u=cyb3r-jak3">Community Help</a>
+
+<h2>Docker Compose file</h2>
+
+version: '3.9'
+
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:2022.6.3
+    command: tunnel run --token <TOKEN>
+  
+
+  apache:
+    image: httpd:2.4-alpine
+    volumes:
+      - ./index.html:/usr/local/apache2/htdocs/index.html:ro
