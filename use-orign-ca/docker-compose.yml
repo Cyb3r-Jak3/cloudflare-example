@@ -1,0 +1,18 @@
+version: '3.9'
+
+
+services:
+  cloudflare:
+    image: cloudflare/cloudflared:2022.6.3
+    command: tunnel run
+    env_file:
+      - .env
+  
+  nginx:
+    image: nginx:mainline-alpine
+    # Needed to match origin cert name
+    container_name: "origin-ca.cybertestdomain.uk"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./cert.pem:/cert.pem:ro
+      - ./key.pem:/key.pem:ro
