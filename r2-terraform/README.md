@@ -1,6 +1,6 @@
 # R2 Terraform
 
-Example repo for controlling Cloudflare R2 buckets with Terraform.
+Example repo for controlling [Cloudflare R2](https://developers.cloudflare.com/r2) buckets with [Terraform](https://www.terraform.io/).
 
 ## Get Started
 
