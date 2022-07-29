@@ -1,0 +1,7 @@
+tunnel: e12cb15c-ca93-4082-8c24-8ba979c1ab89
+credentials-file: /etc/cloudflared/e12cb15c-ca93-4082-8c24-8ba979c1ab89.json
+
+ingress:
+  - hostname: httpd-example.cyberjake.xyz
+    service: http://apache:80
+  - service: http_status:404

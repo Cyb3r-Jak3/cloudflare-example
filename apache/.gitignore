@@ -1,0 +1,2 @@
+cloudflared/*.pem
+cloudflared/*.json

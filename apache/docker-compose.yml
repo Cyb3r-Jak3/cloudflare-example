@@ -2,10 +2,11 @@ version: '3.9'
 
 services:
   cloudflared:
-    image: cloudflare/cloudflared:2022.6.3
-    command: tunnel run
-    env_file:
-      - .env
+    image: cloudflare/cloudflared:2022.7.1
+    command: tunnel --config /config.yml run
+    volumes:
+      - ./cloudflared:/etc/cloudflared:ro
+      - ./config.yml/:/config.yml:ro
   
 
   apache:
