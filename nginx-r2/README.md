@@ -1,0 +1,1 @@
+[Read the blog post here](https://blog.cyberjake.xyz/Nginx-Proxy-R2/)
