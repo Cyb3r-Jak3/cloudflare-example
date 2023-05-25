@@ -25,7 +25,6 @@ resource "aws_s3_bucket" "cloudflare-bucket" {
 }
 
 resource "aws_s3_bucket_cors_configuration" "public_bucket_cors" {
-  provider = aws
   bucket   = aws_s3_bucket.cloudflare-bucket.id
 
   cors_rule {
