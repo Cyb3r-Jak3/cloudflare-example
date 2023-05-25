@@ -42,4 +42,11 @@ resource "aws_s3_bucket_lifecycle_configuration" "life_cycles" {
       days = 1
     }
   }
+  rule {
+    id = "abort-multipart-upload"
+    status = "Enabled"
+    abort_incomplete_multipart_upload {
+      days_after_initiation = 1
+    }
+  }
 }
